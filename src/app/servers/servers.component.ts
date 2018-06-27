@@ -9,7 +9,8 @@ import {timeout} from 'q';
 export class ServersComponent implements OnInit {
 state = false;
 oncreate = 'not created yet';
-serverName = '';
+serverName = 'not set yet';
+    userName = '';
   constructor() {
     setTimeout(() => {this.state = true; }, 2000);
   }
@@ -19,8 +20,16 @@ serverName = '';
   onCreatServer() {
         this.oncreate = 'Server Created';
     }
-    onUpdateSertver(event: Event) {
-        this.serverName = (<HTMLInputElement>event.target).value;
+    onSetUserName() {
+      this.userName = '';
     }
+    isEmptyField() {
+        if (this.userName === '') {
+            return true;
+        }
+    }
+    // onUpdateSertver(event: Event) {
+    //     this.serverName = (<HTMLInputElement>event.target).value;
+    // }
 
 }

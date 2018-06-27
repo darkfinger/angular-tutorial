@@ -1,8 +1,16 @@
 <hr>
-<label for="nameServer">Set server Name</label>
-<input type="text" class="form-control" (input)="onUpdateSertver($event)" />
+<label for="username">Set server Name</label>
+<input id="username" type="text" class="form-control" [(ngModel)]="userName" />
+<button class="btn btn-primary" [disabled] = "isEmptyField()" (click)="onSetUserName()">set user name</button>
 
-<input type="text" class="form-control" (input)="onUpdateSertver($event)" />
+<hr>
+<h1>user : {{userName}}</h1>
+
+
+<label for="nameServer">reset Name</label>
+<!--<input type="text" class="form-control" (input)="onUpdateSertver($event)" />-->
+
+<input id="nameServer" type="text" class="form-control" [(ngModel)]="serverName" />
 <hr>
 <p>Name : {{serverName}}</p>
 <button class="btn btn-primary" [disabled] = "!state" (click)="onCreatServer()">SET SERVER</button>

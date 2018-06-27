@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-the server {{serverID}}
-</body>
-</html>
+<hr>
+<h1>Assignment 3</h1>
+<button class="btn-primary btn" (click)="onChangeState()">{{stateButton}}</button>
+<div>
+    <div
+            *ngFor="let st of logTab;let i = index"
+            [ngStyle]="{backgroundColor : i>=4?'green':'transparent'}"
+            [ngClass]="{stateButtonClass:i>=4}"
+    >{{i}}. {{st}}</div>
+</div>
